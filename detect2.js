@@ -49,7 +49,6 @@ function collisionDetection( positionX , positionZ , index,     radius  ,  veloc
 
 	}
 	else if (RminX > 0) { /* R to right of circle center */
-		 console.log("case2");
 		if (RmaxZ < 0) /* R in lower right corner */
 			Check_Intersect = ((RminX * RminX + RmaxZ * RmaxZ) < Rad2);	
 		else if (RminZ > 0) /* R in upper right corner */
@@ -65,7 +64,6 @@ function collisionDetection( positionX , positionZ , index,     radius  ,  veloc
 			newVel =  velocity.clone().projectOnVector(obstacles[index].vectorN2); 
 	}
 	else{ /* R on circle vertical centerline */
-		console.log("case3");
 		if (RmaxZ < 0){ /* R due South of circle */
 			Check_Intersect = (Math.abs(RmaxZ) <  radius );	
 			if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN1) <= 0 ) 
