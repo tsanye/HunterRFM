@@ -270,7 +270,7 @@ var baseH = 0 ;
 //6.1
 // 將障礙物設成Global Varible，每次重啟遊戲時不用再創新的，重新加入obj和obstacles陣列即可
 var wall1 , wall2 , wall3 , wall4 , wall5, wall6 , wall7 , wall8 , wall9 , wall10, wall11, wall12;
-var box1, box2 , box3 , box4 , box5, box6, box7, box8 ;
+var box1, box2 , box3 , box4 , box5, box6, box7, box8 , box9 , box10;
 
 var balls = [] ; 
 var ballIcons = [] ;
@@ -370,8 +370,8 @@ function gameStart(){
 	obj.push( wall1 , wall2 , wall3 , wall4 , wall5, wall6 , wall7 , wall8 , wall9 , wall10, wall11, wall12); 
 	obstacles.push( wall1 , wall2 , wall3 , wall4 , wall5 , wall6 , wall7 , wall8, wall9 , wall10, wall11, wall12);
 	
-	obj.push(box1 , box2 , box3 , box4 , box5, box6, box7, box8 );
-	obstacles.push(box1, box2 , box3 , box4 , box5, box6, box7, box8);
+	obj.push(box1 , box2 , box3 , box4 , box5, box6, box7, box8 ,box9 , box10);
+	obstacles.push(box1, box2 , box3 , box4 , box5, box6, box7, box8,box9 , box10 );
 	
 	clockA = new THREE.Clock();
 	

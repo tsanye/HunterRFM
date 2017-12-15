@@ -19,9 +19,10 @@ function buildObstacles(){
 	box4 = buildBox( new THREE.Vector3(-40 , 7.5 , -110) , 0 , 15 , "4") ; 
 	box5 = buildBox( new THREE.Vector3(-65 , 7.5 , -110) , 0 , 15 , "5") ; 
 	box6 = buildBox( new THREE.Vector3(140 , 7.5 , -70) , 0 , 15 , "6") ; 
-	box7 = buildBox( new THREE.Vector3(140 , 7.5 , -40) , 0 , 15 , "7") ; 
-	box8 = buildBox( new THREE.Vector3(140 , 7.5 , -10) , 0 , 15 , "8") ; 
-	
+	box7 = buildBox( new THREE.Vector3(140 , 7.5 , -50) , 0 , 15 , "7") ; 
+	box8 = buildBox( new THREE.Vector3(140 , 7.5 , -30) , 0 , 15 , "8") ; 
+	box9 = buildBox( new THREE.Vector3(140 , 7.5 , -10) , 0 , 15 , "9") ; 
+	box10 = buildBox( new THREE.Vector3(140 , 7.5 , 10) , 0 , 15 , "10") ; 
 
 }
 
