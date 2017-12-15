@@ -469,7 +469,7 @@ function onDocumentMouseDown(event) {
  var intersects = raycaster.intersectObjects(pickables);
  if (intersects.length > 0) {
  
-  hint = true;
+  
   if(intersects[0].object == treasureIcons[0])
    foundTreasure(treasureIcons[0]);
   else if(intersects[0].object == treasureIcons[1])
@@ -478,7 +478,7 @@ function onDocumentMouseDown(event) {
    foundTreasure(treasureIcons[2]);
   else if(intersects[0].object == treasureIcons[3])//6.1
    foundTreasure(treasureIcons[3]); 
-  
+	hint = true;
  }
 }
 
