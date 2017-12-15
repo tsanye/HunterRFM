@@ -192,8 +192,8 @@ var hunterAction = function (){
 			HCount++ ;
 			//6.1
   			if( HCount % 2 === 0 )  hunters[i].spriteAnimation( 10 );
-			hunters[i].maxSpeed = 30 ;
-			hunters[i].maxForce = 30 ;
+			hunters[i].maxSpeed = 25 ;
+			hunters[i].maxForce = 25 ;
 
 			
 			var sight = new THREE.Vector3(1, 0 , 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), hunters[i].angle ).normalize();		

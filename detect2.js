@@ -33,6 +33,7 @@ function collisionDetection( positionX , positionZ , index,     radius  ,  veloc
   var newVel ;
   
  if (RmaxX < 0){ /* R to left of circle center */
+
 		if (RmaxZ < 0) /* R in lower left corner */
 			Check_Intersect = ((RmaxX * RmaxX + RmaxZ * RmaxZ) < Rad2);	
 		else if (RminZ > 0) /* R in upper left corner */
@@ -42,11 +43,11 @@ function collisionDetection( positionX , positionZ , index,     radius  ,  veloc
 			
 		if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN3) <= 0 )
 			newVel =  velocity.clone().projectOnVector(obstacles[index].vectorN3);
-		else if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN1) <= 0 ) 
-			newVel = velocity.clone().projectOnVector(obstacles[index].vectorN1);
-		else if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN2) <= 0 ) 
-			newVel =  velocity.clone().projectOnVector(obstacles[index].vectorN2); 
-
+		else if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN1) < 0 ) 
+			newVel = velocity.clone().projectOnVector(obstacles[index].vectorN2);
+		else if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN2) < 0 ) 
+			newVel =  velocity.clone().projectOnVector(obstacles[index].vectorN1); 
+	
 	}
 	else if (RminX > 0) { /* R to right of circle center */
 		if (RmaxZ < 0) /* R in lower right corner */
@@ -58,7 +59,7 @@ function collisionDetection( positionX , positionZ , index,     radius  ,  veloc
 		
 		if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN4) <= 0 )
 			newVel = velocity.clone().projectOnVector(obstacles[index].vectorN4);
-		else if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN1) <= 0 ) 
+		else if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN1) < 0 ) 
 			newVel = velocity.clone().projectOnVector(obstacles[index].vectorN1);
 		else if( Check_Intersect && velocity.clone().dot(obstacles[index].vectorN2) <= 0 ) 
 			newVel =  velocity.clone().projectOnVector(obstacles[index].vectorN2); 

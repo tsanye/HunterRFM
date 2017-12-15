@@ -5,9 +5,9 @@ function buildObstacles(){
 	wall3 = buildWall( new THREE.Vector3( 130 , 10 , 115) , 0 , 40 , 20 ,  10, "3" );
 	wall4 = buildWall( new THREE.Vector3( 60 , 10 , 80 ) , Math.PI/4 , 70 , 20 ,  10, "4" );
 	wall5 = buildWall( new THREE.Vector3( 0 , 10 , -130 ) , 0 , 150 , 20 ,  10, "5" );
-	wall6 = buildWall( new THREE.Vector3( -80, 10 , -75 ) , 0 , 10 , 20 ,  100, "6" );
-	wall7 = buildWall( new THREE.Vector3( 80 , 10 , -65 ) , 0 , 10 , 20 ,  120, "7" );
-	wall8 = buildWall( new THREE.Vector3( -150 , 10 , 50 ) , 0 , 10 , 20 ,  60, "8" );
+	wall6 = buildWall( new THREE.Vector3( -80, 10 , -75 ) , Math.PI/2 , 100 , 20 ,  10, "6" );
+	wall7 = buildWall( new THREE.Vector3( 80 , 10 , -65 ) , Math.PI/2 , 120 , 20 ,  10, "7" );
+	wall8 = buildWall( new THREE.Vector3( -150 , 10 , 50 ) , Math.PI/2 , 60 , 20 ,  10, "8" );
 	wall9 = buildWall( new THREE.Vector3( 120 , 10 , -200 ) , 0 , 150 , 20 ,  10, "9" );
 	wall10 = buildWall( new THREE.Vector3( 180 , 10 , -180 ) , Math.PI/2 , 80 , 20 ,  10, "10" );
 	wall11 = buildWall( new THREE.Vector3( -160 , 10 , -210 ) , Math.PI/3 , 80 , 20 ,  10, "11" );
@@ -65,8 +65,8 @@ function buildBox( initPos , angleW , boxX , name ){
 	
 	var mesh = new THREE.Mesh(new THREE.BoxGeometry(boxX, boxX, boxX), new THREE.MeshNormalMaterial()); 
 	loadTexture( mesh , 'https://i.imgur.com/d7qGdbQ.jpg') ;
-	mesh.rotation.y = angleW ; 
 	box.add(mesh) ;
+	box.rotation.y = angleW ; 
 	box.position.copy(initPos);
 	scene.add(box) ;
 	

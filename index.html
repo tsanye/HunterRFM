@@ -160,7 +160,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 	<script src = "state-machine.js"></script>
-	<script src = "detect2.js"></script>
+	<script src = "detect.js"></script>
 	<script src = "obstacle.js"></script>
 	<script src = "KeyboardForHunterRFM.js"></script>
 	  
@@ -525,7 +525,7 @@ function animate(){
 		controls.target = player.position ;// whatever Vector3 you are using already
 	  
 	// for Hunter  
-		if (!catched){
+		if (!catched || !eatOver){
 
 			hunterAction();
 			
@@ -546,14 +546,11 @@ function animate(){
 				treasures[i].obtain = true;
 			}
 		}
-		for ( var i = 0 ; i < treasures.length ; i++ ) {
-			
-			if(treasures[0].obtain == true && treasures[1].obtain == true &&
-			   treasures[2].obtain == true && treasures[3].obtain == true ) {
-			   
-				eatOver = true;
-				start = false;
-			}
+		if(treasures[0].obtain == true && treasures[1].obtain == true &&
+		   treasures[2].obtain == true && treasures[3].obtain == true ) {
+		   
+			eatOver = true;
+			start = false;
 		}
 		
 		// 0.5.7 ? timer
@@ -570,7 +567,7 @@ function animate(){
 	
 		win();
 		$('#replayInfo').css ('display', '');
-		
+		alertSound.pause();
 	}
 	// for system
 	controls.update();
